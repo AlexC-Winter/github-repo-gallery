@@ -1,7 +1,5 @@
 const overviewDiv = document.querySelector(".overview");
-console.log(overviewDiv);
 // The div for the overview profile section
-
 const username = "AlexC-Winter"
 // GitHub usernamne
 
