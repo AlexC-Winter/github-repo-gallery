@@ -29,14 +29,23 @@ const userDisplay = function(data){
             <p><strong>Number of public repos:</strong> ${data.public_repos}</p>
         </div> `
     overviewDiv.append(div)
+    githubRepos()
 }
+
 
 const githubRepos = async function () {
     const repoFetch = await fetch(
         `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`
     )
     const repoData = await repoFetch.json()
-    console.log(repoData)
+    repoDisplay(repoData)
 }
 
-githubRepos()
+const repoDisplay = function(repoData) {
+    for (const repo of repoData) {
+        const repoItem = document.createElement("li")
+        repoItem.classList.add("repo")
+        repoItem.innerHTML = `<h3>${repo.name}<h3/>`
+        repoList.append(repoItem)
+    }
+}
