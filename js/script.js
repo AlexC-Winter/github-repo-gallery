@@ -1,13 +1,15 @@
 const overviewDiv = document.querySelector(".overview");
-// The div for the overview profile section
+// The div element for the overview profile section
 const username = "AlexC-Winter"
-// GitHub usernamne
+// GitHub username
+const repoList = document.querySelector(".repo-list")
+// ul of repos
 
 const githubProfile = async function () {
-    const res = await fetch(
+    const userInfo = await fetch(
         `https://api.github.com/users/${username}`
     )
-    const data = await res.json()
+    const data = await userInfo.json()
     userDisplay(data)
 }
 
@@ -28,3 +30,13 @@ const userDisplay = function(data){
         </div> `
     overviewDiv.append(div)
 }
+
+const githubRepos = async function () {
+    const repoFetch = await fetch(
+        `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`
+    )
+    const repoData = await repoFetch.json()
+    console.log(repoData)
+}
+
+githubRepos()
