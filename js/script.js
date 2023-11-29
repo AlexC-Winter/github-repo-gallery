@@ -4,6 +4,10 @@ const username = "AlexC-Winter"
 // GitHub username
 const repoList = document.querySelector(".repo-list")
 // ul of repos
+const repoSecClass = document.querySelector(".repos")
+// section class where repo info appears
+const repoDataSecClass = document.querySelector(".repo-data")
+// section class where individual repo data appears
 
 const githubProfile = async function () {
     const userInfo = await fetch(
