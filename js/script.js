@@ -53,3 +53,10 @@ const repoDisplay = function(repoData) {
         repoList.append(repoItem)
     }
 }
+
+repoList.addEventListener("click", function(e){
+    if (e.target.matches("h3")) {
+        let repoName = e.target.innerText
+        console.log(repoName)
+    }
+})
