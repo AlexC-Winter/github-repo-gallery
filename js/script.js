@@ -79,7 +79,7 @@ const getRepoInfo = async function(repoName){
 
 const displayRepoInfo = function(repoInfo, languages){
     repoDataSecClass.innerHTML = "";
-    repoData.classList.remove("hide");
+    repoDataSecClass.classList.remove("hide");
     repoSecClass.classList.add("hide");
     const div = document.createElement("div")
     div.innerHTML = `
