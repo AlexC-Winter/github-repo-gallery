@@ -8,6 +8,12 @@ const repoSecClass = document.querySelector(".repos")
 // section class where repo info appears
 const repoDataSecClass = document.querySelector(".repo-data")
 // section class where individual repo data appears
+const backButton = document.querySelector(".view-repos")
+// Back to repo gallery button
+console.log(backButton)
+const filterInput = document.querySelector(".filter-repos")
+// input with search by name placeholder
+console.log(filterInput)
 
 const githubProfile = async function () {
     const userInfo = await fetch(
