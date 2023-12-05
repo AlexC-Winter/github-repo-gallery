@@ -51,6 +51,7 @@ const githubRepos = async function () {
 }
 
 const repoDisplay = function(repoData) {
+    filterInput.classList.remove("hide")
     for (const repo of repoData) {
         const repoItem = document.createElement("li")
         repoItem.classList.add("repo")
