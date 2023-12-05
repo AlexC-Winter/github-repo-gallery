@@ -10,10 +10,9 @@ const repoDataSecClass = document.querySelector(".repo-data")
 // section class where individual repo data appears
 const backButton = document.querySelector(".view-repos")
 // Back to repo gallery button
-console.log(backButton)
 const filterInput = document.querySelector(".filter-repos")
 // input with search by name placeholder
-console.log(filterInput)
+
 
 const githubProfile = async function () {
     const userInfo = await fetch(
@@ -87,6 +86,7 @@ const displayRepoInfo = function(repoInfo, languages){
     repoDataSecClass.innerHTML = "";
     repoDataSecClass.classList.remove("hide");
     repoSecClass.classList.add("hide");
+    backButton.classList.remove("hide")
     const div = document.createElement("div")
     div.innerHTML = `
         <h3>Name: ${repoInfo.name}</h3>
@@ -96,3 +96,9 @@ const displayRepoInfo = function(repoInfo, languages){
         <a class="visit" href="${repoInfo.html_url}" target="_blank" rel="noreferrer noopener">View Repo on GitHub!</a>`;
     repoDataSecClass.append(div)
 }
+
+backButton.addEventListener("click", function(){
+    repoSecClass.classList.remove("hide")
+    repoDataSecClass.classList.add("hide")
+    backButton.classList.add("hide")
+})
